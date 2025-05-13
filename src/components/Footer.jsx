@@ -47,18 +47,16 @@ const Footer = () => {
             <p className="text-sm uppercase tracking-wide">Mail us at</p>
             <p className="text-xl font-semibold">info@marketingodus.com</p>
           </div>
-          <div>
-            <p className="text-sm uppercase tracking-wide">HR Enquiries</p>
-            <p className="text-xl font-semibold">+91 9999 999 999</p>
-          </div>
+
           <div>
             <p className="text-sm uppercase tracking-wide">Sales Enquiries</p>
-            <p className="text-xl font-semibold">+91 9999 999 999</p>
+            <p className="text-xl font-semibold">+91 7665 588 851</p>
           </div>
           <div>
             <p className="text-sm uppercase tracking-wide">INDIA</p>
-            <p className="text-xl font-semibold">
-              #451/895/8/8 MarketingOdus, Rajasthan 313001
+            <p className="text-xl font-semibold md:max-w-[70%]">
+              261, Shree Ji Vihar, New vidhyanagar, Sector 4, Hiran Magri,
+              Udaipur, Rajasthan 313001
             </p>
           </div>
         </div>
