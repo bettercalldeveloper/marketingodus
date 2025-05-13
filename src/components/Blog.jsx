@@ -6,16 +6,16 @@ const Blog = () => {
   return (
     <section className=" text-white mt-16 md:mt-36" id="blog">
       <div className="max-w-[87%] mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h1 className="text-3xl text-black md:text-4xl font-bold mb-12 text-center">
           Our Blog
         </h1>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
           {posts.map(({ id, slug, title, image, excerpt }) => (
             <Link
               key={id}
               to={`/blog/${slug}`}
-              className="block bg-[#18181f] rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="block bg-[#18181f] rounded-lg overflow-hidden hover:shadow-lg transition-shadow w-[350px]"
             >
               <div className="h-60 w-full overflow-hidden">
                 <img

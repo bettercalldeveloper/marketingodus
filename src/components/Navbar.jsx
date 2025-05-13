@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#121217] md:rounded-lg text-white w-full px-4 py-3 sticky top-0 z-50 md:top-14 max-w-[99%] xl:max-w-[60%] mx-auto">
+      <nav className="bg-[#121217] md:rounded-lg text-white w-full px-4 py-3 sticky top-0 z-50 md:top-14 max-w-[100%] md:max-w-[95%] xl:max-w-[60%] mx-auto">
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16">
           <div className="hidden md:flex space-x-8">
             {navItemsLeft.map((item) => (

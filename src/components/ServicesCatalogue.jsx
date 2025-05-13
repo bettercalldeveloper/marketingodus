@@ -31,7 +31,7 @@ const ServicesCatalogue = () => {
         {[...services, ...services].map(({ name, icon }, i) => (
           <span
             key={`${name}-${i}`}
-            className="inline-block text-white text-center px-4 sm:px-6 md:px-8"
+            className="inline-block text-center px-4 sm:px-6 md:px-8"
           >
             <div className="flex flex-col items-center space-y-2">
               <div className="text-2xl sm:text-3xl md:text-4xl">{icon}</div>

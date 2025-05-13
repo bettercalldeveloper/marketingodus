@@ -52,7 +52,7 @@ const Home = () => {
 
       <ServicesCatalogue />
 
-      <section className="mt-16 md:mt-36 mb-16 max-w-[87%] md:max-w-[30%] mx-auto">
+      <section className="mt-16 mb-16 max-w-[87%] md:max-w-[30%] mx-auto">
         <p className="font-semibold text-xl md:text-3xl text-center ">
           We don't just go digital - we go directional, guiding your brand with
           purpose, strategy and upward momentum
