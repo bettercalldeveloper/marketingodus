@@ -8,16 +8,27 @@ const BlogPost = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const paragraphs = post.content.split("\n\n");
+  const paragraphs = post.content.split(/\n\s*\n/);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const parseText = (text) => {
+    text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+    text = text.replace(/_(.*?)_/g, "<em>$1</em>");
+
+    text = text.replace(
+      /(Book (a )?(free )?(strategy )?(consultation|call)[^.]*)/gi,
+      '<a href="#contact" class="text-blue-600 underline">$1</a>'
+    );
+    return text;
+  };
+
   return (
     <article className="mt-16 md:mt-36 px-4">
       <div className="max-w-4xl mx-auto space-y-14">
-        {/* Blog Title */}
         <header className="space-y-6">
           <h1 className="text-3xl md:text-5xl font-bold text-black leading-tight">
             {post.title}
@@ -25,33 +36,56 @@ const BlogPost = () => {
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl"
+            className="w-full h-64 sm:h-80 md:h-[450px] object-cover object-top rounded-xl"
           />
         </header>
 
-        {/* Blog Content */}
         <section className="prose prose-neutral prose-lg md:prose-xl prose-headings:font-semibold prose-headings:text-black prose-p:text-gray-700 max-w-none text-lg">
           {paragraphs.map((para, i) => {
-            const isHeading = para.match(/^(✨|🤝|💡|🔁|🌆|🏙️|📍|🗓️)/);
-            const isListItem = para.match(/^✅|^👉|^🍴|^🍛|^🥭|^☕|^📍/);
+            const trimmed = para.trim();
+
+            const isHeading =
+              /^[🧭✨🤝💡🔁🌆🏙️📍🗓️🚀📞📸💬💼📊✍️📍🎯🔍🎥📌💡🎉💬🧠🎬🎨🔧💻📈📣🧑‍🤝‍🧑💬🔗🔎📌]/.test(
+                trimmed
+              );
+            const isCallout = /^👉|^✅|^📞|^🚀/.test(trimmed);
+            const isBullet =
+              /^- /.test(trimmed) || /^[🍴🍛🥭☕📍]/.test(trimmed);
+
+            const parsedHTML = parseText(trimmed);
 
             if (isHeading) {
               return (
-                <h2 key={i} className="text-2xl mt-10 mb-2">
-                  {para}
-                </h2>
-              );
-            } else if (isListItem) {
-              return (
-                <p
+                <h2
                   key={i}
-                  className="pl-4 border-l-4 border-yellow-400 bg-yellow-50 rounded-md py-2 px-3"
+                  className="text-2xl mt-10 mb-2"
+                  dangerouslySetInnerHTML={{ __html: parsedHTML }}
+                />
+              );
+            } else if (isCallout) {
+              return (
+                <div
+                  key={i}
+                  className="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-md"
                 >
-                  {para}
-                </p>
+                  <p
+                    className="m-0"
+                    dangerouslySetInnerHTML={{ __html: parsedHTML }}
+                  />
+                </div>
+              );
+            } else if (isBullet) {
+              return (
+                <li
+                  key={i}
+                  className="ml-6 list-disc"
+                  dangerouslySetInnerHTML={{ __html: parsedHTML }}
+                />
               );
             } else {
-              return <p key={i}>{para}</p>;
+              return (
+                <p key={i} dangerouslySetInnerHTML={{ __html: parsedHTML }} />
+              );
             }
           })}
         </section>

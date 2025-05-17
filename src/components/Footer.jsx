@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <p className="text-sm uppercase tracking-wide">INDIA</p>
             <p className="text-xl font-semibold md:max-w-[70%]">
-              261, Shree Ji Vihar, New vidhyanagar, Sector 4, Hiran Magri,
+              261, Shree Ji Vihar, New vidhya nagar, Sector 4, Hiran Magri,
               Udaipur, Rajasthan 313001
             </p>
           </div>
