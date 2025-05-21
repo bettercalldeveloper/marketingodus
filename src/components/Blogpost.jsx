@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import posts from "../data/blog.json";
+import { Helmet } from "react-helmet-async";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -28,6 +29,17 @@ const BlogPost = () => {
 
   return (
     <article className="mt-16 md:mt-36 px-4">
+      <Helmet>
+        <title>{`${post.title} - MarketingOdus Blog`}</title>
+        <meta name="description" content={post.excerpt || post.title} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt || post.title} />
+        <meta property="og:image" content={post.image} />
+        <link
+          rel="canonical"
+          href={`https://marketingodus.com/blog/${post.slug}`}
+        />
+      </Helmet>
       <div className="max-w-4xl mx-auto space-y-14">
         <header className="space-y-6">
           <h1 className="text-3xl md:text-5xl font-bold text-black leading-tight">

@@ -1,10 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import posts from "../data/blog.json";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   return (
     <section className="text-white mt-16 md:mt-36" id="blog">
+      <Helmet>
+        <title>MarketingOdus Blog - Insights, Strategy & Innovation</title>
+        <meta
+          name="description"
+          content="Read expert tips, insights, and trends in digital marketing, branding, and content strategy from the MarketingOdus team."
+        />
+        <meta property="og:title" content="MarketingOdus Blog" />
+        <meta
+          property="og:image"
+          content="https://marketingodus.com/ogimagemo.jpg"
+        />
+        <link rel="canonical" href="https://marketingodus.com/blog" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl text-black md:text-4xl font-bold mb-12 text-center">
           Our Blog

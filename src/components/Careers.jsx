@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const Careers = () => {
   const formRef = useRef();
@@ -48,6 +49,24 @@ const Careers = () => {
 
   return (
     <section id="careers" className=" mt-16 md:mt-36 max-w-[87%] mx-auto">
+      <Helmet>
+        <title>Careers at MarketingOdus</title>
+        <meta
+          name="description"
+          content="Join the MarketingOdus team and shape the future of digital marketing. Explore open roles and apply now."
+        />
+        <meta
+          property="og:title"
+          content="Work With Us - Careers at MarketingOdus"
+        />
+        <meta
+          property="og:image"
+          content="https://marketingodus.com/ogimagemo.jpg"
+        />
+
+        <link rel="canonical" href="https://marketingodus.com/careers" />
+      </Helmet>
+
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
           <h1 className="text-3xl md:text-4xl font-semibold mb-5">

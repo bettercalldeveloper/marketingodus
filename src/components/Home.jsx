@@ -1,10 +1,31 @@
 import React from "react";
 import ServicesCatalogue from "./ServicesCatalogue";
 import MarketingVid from "./MarketingVid";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div className="mt-16 md:mt-36">
+      <Helmet>
+        <title>MarketingOdus - Digital Marketing Agency</title>
+        <meta
+          name="description"
+          content="MarketingOdus helps brands evolve through strategy, creativity, and digital transformation. Explore our services to grow with purpose."
+        />
+        <meta
+          property="og:title"
+          content="MarketingOdus - Strategic Digital Marketing"
+        />
+        <meta
+          property="og:description"
+          content="Explore our digital-first approach to marketing and brand growth."
+        />
+        <meta
+          property="og:image"
+          content="https://marketingodus.com/ogimagemo.jpg"
+        />
+        <link rel="canonical" href="https://marketingodus.com/" />
+      </Helmet>
       <section
         id="home"
         className="  flex flex-col items-center justify-center text-center max-w-[87%] mx-auto"

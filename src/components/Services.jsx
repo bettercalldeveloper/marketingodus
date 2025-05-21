@@ -1,9 +1,24 @@
 import React from "react";
 import { services } from "../data/services";
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   return (
     <div className=" max-w-[87%] mx-auto mt-16 md:mt-36 ">
+      <Helmet>
+        <title>Services - MarketingOdus</title>
+        <meta
+          name="description"
+          content="From SEO to branding, we offer full-stack marketing solutions to move your brand forward."
+        />
+        <meta property="og:title" content="Our Services - MarketingOdus" />
+        <meta
+          property="og:image"
+          content="https://marketingodus.com/ogimagemo.jpg"
+        />
+        <link rel="canonical" href="https://marketingodus.com/services" />
+      </Helmet>
+
       <section
         id="home"
         className="  flex flex-col items-center justify-center text-center max-w-[87%] mx-auto"

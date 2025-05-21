@@ -1,10 +1,26 @@
 import React from "react";
 import MouseMoveMarquee from "./MouseMoveMarquee";
 import MarketingVid from "./MarketingVid";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
     <div className="mt-16 md:mt-36 ">
+      <Helmet>
+        <title>About Us - MarketingOdus</title>
+        <meta
+          name="description"
+          content="Learn about MarketingOdus's journey, our values, and how we help brands navigate the digital age with purpose."
+        />
+        <meta property="og:title" content="About - MarketingOdus" />
+        <meta
+          property="og:image"
+          content="https://marketingodus.com/ogimagemo.jpg"
+        />
+
+        <link rel="canonical" href="https://marketingodus.com/about" />
+      </Helmet>
+
       <section
         id="home"
         className="  flex flex-col items-center justify-center text-center max-w-[87%] mx-auto"
